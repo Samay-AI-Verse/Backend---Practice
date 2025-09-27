@@ -1,5 +1,22 @@
 
+from fastapi import  FastAPI,Path
+from pydantic import BaseModel
 
+from typing import List
+
+class stud(BaseModel):
+    id : int
+    name : str
+    age : int
+
+list = []
+
+
+app = FastAPI()
+
+@app.get('/')
+def show():
+    return "hello world!"
 
 
 @app.get("/data")
